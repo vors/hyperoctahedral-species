@@ -1,0 +1,218 @@
+% $Id: diploma.tex 90 2009-06-11 12:51:46Z zyv $
+
+% The extsizes classes and class options provide support for sizes
+% eight, nine,
+% ten, eleven, twelve, fourteen, seventeen and twenty points.
+% http://www.ctan.org/tex-archive/macros/ ... /extsizes/
+\documentclass[a4paper,14pt]{extarticle}
+
+% PDF search & cut'n'paste
+\usepackage{cmap}
+
+% Better sans-serif fonts
+\usepackage{pscyr}
+\renewcommand{\rmdefault}{cmr}
+\renewcommand{\sfdefault}{ftx}
+\renewcommand{\ttdefault}{cmtt}
+
+% Cyrillic support
+\usepackage{mathtext}
+\usepackage[T2A]{fontenc}
+\DeclareSymbolFont{T2Aletters}{T2A}{cmr}{m}{it}
+\usepackage[utf8]{inputenc}
+
+% Also be sure to add
+%
+% english hyphen
+% ruseng ruenhyph
+% =russian
+%
+% to ~/.texlive2008/texmf-var/tex/generic/config/language.dat
+
+\usepackage[english,russian]{babel}
+
+% AMS font faces
+\usepackage{amsmath, amsfonts, amssymb}
+
+% Support for the upright and bold greek letters
+\usepackage{bm}
+\usepackage[Symbolsmallscale]{upgreek}
+\makeatletter
+        \newcommand{\bfgreek}[1]{\bm{\@nameuse{up#1}}}
+\makeatother
+
+% Detect whether PDFLaTeX is in use
+\usepackage{ifpdf}
+
+% Graphics
+\ifpdf
+        \usepackage[pdftex]{graphicx}
+\else
+        \usepackage{graphicx}
+\fi
+
+\graphicspath{{images/}}
+
+% Indent the first paragraph as well
+\usepackage{indentfirst}
+
+% According to GOST, sections should be called chapters in diploma
+\usepackage{titlesec}
+
+\setcounter{tocdepth}{2}
+
+\titleformat{\section}[block]{\bfseries\large\sffamily\raggedright}
+        {Глава~\Roman{section}.}{1ex}{}
+\titleformat{\subsection}[block]{\bfseries\normalsize\sffamily\raggedright}
+        {\arabic{section}.\arabic{subsection}.}{1ex}{}
+\titleformat{\subsubsection}[block]{\normalsize\sffamily\raggedright}
+        {\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}{1ex}{}
+
+\titlespacing*{\section}      {0pt}{3.50ex plus 1ex minus .2ex}{2.3ex
+plus .2ex}
+\titlespacing*{\subsection}   {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex
+plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex
+plus .2ex}
+
+\usepackage[titles]{tocloft}
+
+\renewcommand{\cftsecpresnum}{Глава~}
+\renewcommand{\cftsecleader}{\bfseries\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecaftersnum}{.}
+\renewcommand{\cftsubsecaftersnum}{.}
+
+\newlength{\zyvseclen}
+\settowidth{\zyvseclen}{\bfseries\cftsecpresnum\cftsecaftersnum}
+\addtolength{\zyvseclen}{2mm}
+\addtolength{\cftsecnumwidth}{\zyvseclen}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}
+        {\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+% Page numbering at the right topmost part of the page
+\pagestyle{myheadings}
+
+% Provides support for setting the spacing between lines in a document.
+% Package
+% options include singlespacing, onehalfspacing, and doublespacing.
+% http://www.ctan.org/tex-archive/macros/ ... /setspace/
+\usepackage{setspace}
+
+% Alternative geometry
+\usepackage[top=2cm, bottom=2cm, left=3cm, right=1cm]{geometry}
+
+% Hyperlinks
+\ifpdf
+        \usepackage[pdftex]{hyperref}
+\else
+        \usepackage{hyperref}
+\fi
+
+\hypersetup{
+        unicode=true,
+        pdftitle={
+        },
+        pdfauthor={},
+        pdfkeywords={
+        },
+        colorlinks,
+        citecolor=black,
+        filecolor=black,
+        linkcolor=black,
+        urlcolor=blue
+}
+
+% Fix links to floats
+\usepackage[all]{hypcap}
+
+% Nice citations [1,2,3,4] -> [1-4]
+\usepackage[numbers,sort&compress]{natbib}
+
+% [1] -> 1. in the bibliography
+\makeatletter
+\renewcommand\@biblabel[1]{#1.}
+\makeatother
+
+% Russian-styled figure and table captions
+\usepackage[labelsep=period]{caption}
+
+% Here we define the relationships for the counters: normaly we should
+% reset the eq, figure & table counters every chapter
+\makeatletter
+\@addtoreset{equation}{section} % Equation counter
+\@addtoreset{figure}{section} % Figure counter
+\@addtoreset{table}{section} % Table counter
+\makeatother
+
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{section}.\arabic{table}}
+
+% Keeps floats `in their place', preventing them from floating past a
+% "\FloatBarrier" command into another section.  The floats should not
+% move
+% past every "\section".
+\usepackage[section]{placeins}
+
+% Compressed lists: compactitem etc.
+\usepackage{paralist}
+
+% Useful for individually placing figures on a separate page with
+% \afterpage{\clearpage \begin{figure}[p] ... }
+\usepackage{afterpage}
+
+% Allow landscape pages for graphics, call like:
+%
+%       \afterpage{\clearpage
+%       \begin{landscape}
+%       \begin{figure}[p]
+%       ...
+%       \end{figure}
+%       \end{landscape}
+%       }
+\ifpdf
+        \usepackage{pdflscape}
+\else
+        \usepackage{lscape}
+\fi
+
+% This declaration makes TeX less fussy about line breaking. This can
+% prevent overfull boxes, but may leave too much space between words.
+% As this really isn't a fine art typography, we'll turn it on, so
+% we won't have paragraphs which spans on the margins...
+\sloppy
+
+\begin{document}
+
+% ------------------------------------------------------------------------------
+% Обложка
+\include{diploma-title}
+
+% ------------------------------------------------------------------------------
+% Оглавление
+\tableofcontents
+
+% ------------------------------------------------------------------------------
+% Текст работы
+\begin{onehalfspacing}
+        \include{diploma-intro}
+        \include{diploma-ch01}
+        \include{diploma-ch02}
+        \include{diploma-ch03}
+        \include{diploma-conclusion}
+        \include{diploma-safety}
+\end{onehalfspacing}
+
+% ------------------------------------------------------------------------------
+% Список литературы
+\phantomsection
+\renewcommand{\refname}{Список литературы}
+\addcontentsline{toc}{section}{Список литературы}
+
+\bibliographystyle{gost780u}
+\bibliography{biblio/diploma}
+
+\end{document}
