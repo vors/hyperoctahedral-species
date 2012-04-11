@@ -2,14 +2,13 @@
 
 \subsection{Аналитический функтор для h-species}
 
-\tikzset{node distance=2cm, auto}
 \begin{tikzpicture}
-  \node (C) {$C$};
-  \node (P) [below of=C] {$\prod_{i \in I} A_i$};
-  \node (Ai) [right of=P] {$A_i$};
-  \draw[->] (C) to node {$f_i$} (Ai);
-  \draw[->, dashed] (C) to node [swap] {$\langle f_i \rangle_{i \in I}$} (P);
-  \draw[->] (P) to node [swap] {$\pi_i$} (Ai);
+	\node (B) {$B$};
+	\node (S1) [below of=B] {$Set$};
+	\node (S2) [right of=B] {$Set$};
+	\draw [right hook->] (B) to node [swap] {} (S1);
+	\draw [->] (B) to node {$F$} (S2);
+	\draw [->] (S1) to node [swap] {$An$} (S2);	
 \end{tikzpicture}
 
 \subsection{Фробениусова характеристика}
