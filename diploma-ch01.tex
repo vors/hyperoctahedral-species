@@ -1,4 +1,17 @@
 \section{Формулы}
+
+\subsection{Аналитический функтор для h-species}
+
+\tikzset{node distance=2cm, auto}
+\begin{tikzpicture}
+  \node (C) {$C$};
+  \node (P) [below of=C] {$\prod_{i \in I} A_i$};
+  \node (Ai) [right of=P] {$A_i$};
+  \draw[->] (C) to node {$f_i$} (Ai);
+  \draw[->, dashed] (C) to node [swap] {$\langle f_i \rangle_{i \in I}$} (P);
+  \draw[->] (P) to node [swap] {$\pi_i$} (Ai);
+\end{tikzpicture}
+
 \subsection{Фробениусова характеристика}
 
 В этом разделе мы напишем формулу для Фробениусовой характеристики.

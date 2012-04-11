@@ -28,6 +28,7 @@
 % AMS font faces
 \usepackage{amsmath, amsfonts, amssymb}
 
+
 % Support for the upright and bold greek letters
 \usepackage{bm}
 \usepackage[Symbolsmallscale]{upgreek}
@@ -44,8 +45,11 @@
 \else
         \usepackage{graphicx}
 \fi
-
 \graphicspath{{images/}}
+
+% Tikz package for draw commutative diagrams (include after graphics)
+\usepackage{tikz}
+\usetikzlibrary{matrix,arrows}
 
 % Indent the first paragraph as well
 \usepackage{indentfirst}
