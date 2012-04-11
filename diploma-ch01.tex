@@ -1,8 +1,14 @@
 \section{Формулы}
 
 \subsection{Аналитический функтор для h-species}
+Аналитический функтор $\mathcal F$ соответствующий species $F$ является
+продуктивной конструкцией, позволяющей определить композиционное произведение
+species. Вводить его можно разными способами, мы ограничимся универсальным
+свойством и явной конструкцией (TODO: дописать и возможно добавить определение
+Дурова)
 
 \begin{tikzpicture}
+\label{comm:an}
 	\node (B) {$B$};
 	\node (S1) [below of=B] {$Set$};
 	\node (S2) [right of=B] {$Set$};
@@ -10,6 +16,29 @@
 	\draw [->] (B) to node {$F$} (S2);
 	\draw [->] (S1) to node [swap] {$An$} (S2);	
 \end{tikzpicture}
+
+\begin{equation}
+\label{eq:an}
+	\mathcal F = \sum\limits_n F[n] \times A^n / S_n
+\end{equation}
+
+Хочется построить аналог аналитического функтора для h-species
+
+\begin{tikzpicture}
+\label{comm:h-an}
+	\node (B) {$H-B$};
+	\node (S1) [below of=B] {$H-Set$};
+	\node (S2) [right of=B] {$H-Set$};
+	\draw [right hook->] (B) to node [swap] {} (S1);
+	\draw [->] (B) to node {$F$} (S2);
+	\draw [->] (S1) to node [swap] {$An$} (S2);	
+\end{tikzpicture}
+
+\begin{equation}
+\label{eq:h-an}
+	\mathcal F = \sum\limits_n F[\Bar n] \times A^{\Bar n} / B_n
+\end{equation}
+Где $A^{\Bar n}$ задает отображение сохраняющее инволюцию. 
 
 \subsection{Фробениусова характеристика}
 
