@@ -11,10 +11,10 @@ species. Вводить его можно разными способами, м�
 \label{comm:an}
 	\node (B) {$B$};
 	\node (S1) [below of=B] {$Set$};
-	\node (S2) [right of=B] {$Set$};
+	\node (S2) [right of=B, node distance=3cm] {$Set$};
 	\draw [right hook->] (B) to node [swap] {} (S1);
 	\draw [->] (B) to node {$F$} (S2);
-	\draw [->] (S1) to node [swap] {$An$} (S2);	
+	\draw [->] (S1) to node [swap] {$\mathcal F$} (S2);	
 \end{tikzpicture}
 
 \begin{equation}
@@ -26,19 +26,19 @@ species. Вводить его можно разными способами, м�
 
 \begin{tikzpicture}
 \label{comm:h-an}
-	\node (B) {$H-B$};
-	\node (S1) [below of=B] {$H-Set$};
-	\node (S2) [right of=B] {$H-Set$};
+	\node (B) {$HB$};
+	\node (S1) [below of=B] {$HSet$};
+	\node (S2) [right of=B, node distance=3cm] {$HSet$};
 	\draw [right hook->] (B) to node [swap] {} (S1);
 	\draw [->] (B) to node {$F$} (S2);
-	\draw [->] (S1) to node [swap] {$An$} (S2);	
+	\draw [->] (S1) to node [swap] {$\mathcal F$} (S2);
 \end{tikzpicture}
 
 \begin{equation}
 \label{eq:h-an}
 	\mathcal F = \sum\limits_n F[\Bar n] \times A^{\Bar n} / B_n
 \end{equation}
-Где $A^{\Bar n}$ задает отображение сохраняющее инволюцию. 
+Где $A^{\Bar n}$ задает отображение, сохраняющее инволюцию. 
 
 \subsection{Фробениусова характеристика}
 
