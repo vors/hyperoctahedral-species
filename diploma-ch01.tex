@@ -196,5 +196,55 @@ $.
 равенство справедливо для обыкновенных производящих функций unlabeled структур.
 
 \subsubsection{Случай h-species}
+Теперь попробуем выстроить теорию композиции цикленного индекса для h-species,
+параллельно теории species. Прежде всего отметим, что инволюция на множестве
+цветов делит их на моноцвета ($x_1, x_2, x_3, \dots$) и бицвета ($y_1, y_2,
+y_3, \dots$). Однако, формула \ref{eq:h-fr} подсказывает что в качестве базиса
+можно брать не $\phi_x^i, \phi_y^j$ а $\phi_x^i, \phi_{x,y}^j$. Впрочем это
+тривиальная замена переменных, поскольку $\phi_{x,y}^j = \phi_x^j + \phi_y^j$.
+Итак мы хоти понять чему равняется
+\begin{equation*}
+\begin{split}
+\mathcal Z_{F \circ G} (&\phi_x^1, \phi_x^2, \phi_x^3, \dots, \\
+						&\phi_{x,y}^1, \phi_{x,y}^2, \phi_{x,y}^3, \dots)
+\end{split}
+\end{equation*}
+Предположение[TODO: заменить на утверждение] такое:
+\begin{equation}
+\begin{split}
+\label{eq:h-zfg}
+	\mathcal Z_{F \circ G} (\phi_x^1, \phi_x^2, \phi_x^3, &\dots, 
+	\phi_{x,y}^1, \phi_{x,y}^2, \phi_{x,y}^3, \dots) = \\
+	\mathcal Z_F(
+		&\mathcal Z_G(\phi_x^1, \phi_x^2, \phi_x^3, \dots, 
+					 \phi_x^1, \phi_x^2, \phi_x^3, \dots), \\
+		&\mathcal Z_G(\phi_x^2, \phi_x^4, \phi_x^6, \dots, 
+					 \phi_x^2, \phi_x^4, \phi_x^6, \dots), \\
+		&\mathcal Z_G(\phi_x^3, \phi_x^6, \phi_x^9, \dots, 
+					 \phi_x^3, \phi_x^6, \phi_x^9, \dots), \\
+		&\dots, \\
+		&\mathcal Z_G(\phi_x^1, \phi_x^2, \phi_x^3, \dots, 
+					 \phi_{x,y}^1, \phi_{x,y}^2, \phi_{x,y}^3, \dots), \\
+		&\mathcal Z_G(\phi_x^2, \phi_x^4, \phi_x^6, \dots, 
+					 \phi_{x,y}^2, \phi_{x,y}^4, \phi_{x,y}^6, \dots), \\
+		&\mathcal Z_G(\phi_x^3, \phi_x^6, \phi_x^9, \dots, 
+					 \phi_{x,y}^3, \phi_{x,y}^6, \phi_{x,y}^9, \dots), \\
+		&\dots
+	)
+\end{split}	
+\end{equation}
+Эта формула слишком грамоздкая, поэтому давайте напишем ее на уровне членов:
+\begin{equation*}
+\begin{split}
+\phi_x^i \circ \mathcal Z_G = Z_G(&\phi_x^i, \phi_x^{2i}, \phi_x^{3i}, \dots, \\ 
+					 			  &\phi_x^i, \phi_x^{2i}, \phi_x^{3i}, \dots)
+\end{split}
+\end{equation*}
 
-
+\begin{equation*}
+\begin{split}
+\phi_{x, y}^i \circ \mathcal Z_G = 
+Z_G(&\phi_x^i, \phi_x^{2i}, \phi_x^{3i}, \dots,\\
+	&\phi_{x,y}^i, \phi_{x,y}^{2i}, \phi_{x,y}^{3i}, \dots)
+\end{split}
+\end{equation*}
