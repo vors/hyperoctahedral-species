@@ -146,20 +146,39 @@ x_3, \dots$ объединенное с счетным множеством би
 
 Это можно выразить такой формулой:
 \begin{equation}
-\label{eq:h-fr}
+\label{eq:h-fr1}
+\begin{split}
 \mathcal Z_F^{(1)} + 2\mathcal Z_F^{(2)} = 
-\sum_{n}\frac{1}{2^{n}n!}\sum_{\sigma \in B_n}\chi(\sigma)
-\psi_{x, y}^{\lambda^1(\sigma)} \psi_{x}^{\lambda^2(\sigma)} = 
-\sum_{n, \lambda^1 + \lambda^2 \vdash n}\chi(\sigma_{\lambda^1 \lambda^2})
+\sum_{n}\frac{1}{2^{n}n!}\sum_{\sigma \in B_n}&\chi(\sigma)
+\psi_{x, y}^{\lambda^1(\sigma)} \psi_{x}^{\lambda^2(\sigma)} = \\
+\sum_{n, \lambda^1 + \lambda^2 \vdash n}&\chi(\sigma_{\lambda^1 \lambda^2})
 \frac{\psi_{x, y}^{\lambda^1} \psi_{x}^{\lambda^2}}{z_{\lambda^1 \lambda^2}}
+\end{split}
 \end{equation}
-
 Здесь нижний индекс $\psi$ означает переменные по которым берется степенная
 сумма. Например $\psi_{x, y}^2 =  (x_1^2 + x_2^2 + x_3^2 + \dots + y_1^2 + y_2^2
 + y_3^2 + \dots)$.
 
 Посчитаем количество количество неподвижных точек для $H_n \times Z_2$. Разобъем
-сумму на две части --- $(h, e)$ и $(h, i)$
+сумму на две части --- $(h, \Bar 0)$ и $(h, \Bar 1)$. Для первой формула будет
+аналогична \ref{eq:h-fr1}, только из-за того что порядок группы в 2 раза больше,
+появится коофициент $\frac{1}{2}$.
+
+Во второй части по-прежнему можно красить и длинные и короткие циклы в моноцвет.
+А вот с бицветом происходит любопытная вещь --- предположим мы красим цикл (пару
+циклов в него). Тогда добавляется смена грани на каждом шаге, а значит для
+циклов нечетной длинны сменится свойство короткий--длинный. Итоговая формула
+такая 
+
+$$
+\frac{1}{2}
+\sum_{n, \lambda_1^1 + \lambda_1^2 + \lambda_2^1 + \lambda_2^2 \vdash
+n}\chi(\sigma_{\lambda_1^1 \lambda_1^2 \lambda_2^1 \lambda_2^2})
+\frac{\psi_{x, y}^{\lambda_2^1 + \lambda_1^2} \psi_{x}^{\lambda_2^2 + 
+\lambda_1^1}}{z_{\lambda_1^1 \lambda_1^2 \lambda_2^1 \lambda_2^2}}
+$$
+Где $\lambda_1$ --- циклы нечетной длинны, $\lambda_2$ ---
+циклы четной длинны.
 
 \subsection{Цикленный индекс композиции}
 \subsubsection{Случай обычных species}
