@@ -187,18 +187,24 @@ x_3, \dots$ объединенное с счетным множеством би
 циклов нечетной длинны сменится свойство короткий--длинный. Итоговая формула
 такая 
 
-$$
-\frac{1}{2}
-\sum_{n, \lambda_1^1 + \lambda_1^2 + \lambda_2^1 + \lambda_2^2 \vdash
-n}\chi(\sigma_{\lambda_1^1 \lambda_1^2 \lambda_2^1 \lambda_2^2})
-\frac{\psi_{x, y}^{\lambda_2^1 + \lambda_1^2} \psi_{x}^{\lambda_2^2 + 
-\lambda_1^1}}{z_{\lambda_1^1 \lambda_1^2 \lambda_2^1 \lambda_2^2}}
-$$
-Где $\lambda_1$ --- циклы нечетной длинны, $\lambda_2$ ---
-циклы четной длинны.
+\begin{equation}
+\label{eq:h-fr2}
+\begin{split}
+\mathcal Z_F^{(1)} + \mathcal Z_F^{(2)} = 
+\frac{1}{2}&
+\sum_{n, \lambda^1 + \lambda^2 \vdash n}\chi(\sigma_{\lambda^1 \lambda^2})
+\frac{\psi_{x, y}^{\lambda^1} \psi_{x}^{\lambda^2}}{z_{\lambda^1 \lambda^2}}
++ \\
+\frac{1}{2}&
+\sum_{n, \lambda_o^1 + \lambda_o^2 + \lambda_e^1 + \lambda_e^2 \vdash
+n}\chi(\sigma_{\lambda_o^1 \lambda_o^2 \lambda_e^1 \lambda_e^2})
+\frac{\psi_{x, y}^{\lambda_e^1 + \lambda_o^2} \psi_{x}^{\lambda_e^2 + 
+\lambda_o^1}}{z_{\lambda_o^1 \lambda_o^2 \lambda_e^1 \lambda_e^2}}
+\end{split}
+\end{equation}
 
-[TODO:Вот тут возникает чувство что получилось то же самое --- можно устроить
-биекцию. А так быть не должно!]
+Где $\lambda_o$ --- циклы нечетной длинны, $\lambda_e$ ---
+циклы четной длинны.
 
 \subsection{Цикленный индекс композиции}
 \subsubsection{Случай обычных species}
