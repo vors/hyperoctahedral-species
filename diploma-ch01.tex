@@ -167,14 +167,16 @@ x_3, \dots$ объединенное с счетным множеством би
 \begin{split}
 \mathcal Z_F^{(1)} + 2\mathcal Z_F^{(2)} = 
 \sum_{n}\frac{1}{2^{n}n!}\sum_{\sigma \in B_n}&\chi(\sigma)
-\psi_{x, y}^{\lambda^1(\sigma)} \psi_{x}^{\lambda^2(\sigma)} = \\
+\psi_{x, y, y}^{\lambda^1(\sigma)} \psi_{x}^{\lambda^2(\sigma)} = \\
 \sum_{n, \lambda^1 + \lambda^2 \vdash n}&\chi(\sigma_{\lambda^1 \lambda^2})
-\frac{\psi_{x, y}^{\lambda^1} \psi_{x}^{\lambda^2}}{z_{\lambda^1 \lambda^2}}
+\frac{\psi_{x, y, y}^{\lambda^1} \psi_{x}^{\lambda^2}}{z_{\lambda^1 \lambda^2}}
 \end{split}
 \end{equation}
 Здесь нижний индекс $\psi$ означает переменные по которым берется степенная
-сумма. Например $\psi_{x, y}^2 =  (x_1^2 + x_2^2 + x_3^2 + \dots + y_1^2 + y_2^2
-+ y_3^2 + \dots)$.
+сумма. Например $\psi_{x, y, y}^2 =  (x_1^2 + x_2^2 + x_3^2 + \dots + y_1^2 +
+y_2^2 + y_3^2 + \dots + y_1^2 + y_2^2 + y_3^2 + \dots)$. При этом коофициент
+2 у $y_i^2$ отражает тот факт, что можно раскрасить $k$ пар граней в бицвет,
+так чтобы расскраска была неподвижна, под действием короткого цикла, 2-мя способами.
 
 Посчитаем количество количество неподвижных точек для $H_n \times Z_2$. Разобъем
 сумму на две части --- $(h, \Bar 0)$ и $(h, \Bar 1)$. Для первой формула будет
@@ -193,12 +195,12 @@ x_3, \dots$ объединенное с счетным множеством би
 \mathcal Z_F^{(1)} + \mathcal Z_F^{(2)} = 
 \frac{1}{2}&
 \sum_{n, \lambda^1 + \lambda^2 \vdash n}\chi(\sigma_{\lambda^1 \lambda^2})
-\frac{\psi_{x, y}^{\lambda^1} \psi_{x}^{\lambda^2}}{z_{\lambda^1 \lambda^2}}
+\frac{\psi_{x, y, y}^{\lambda^1} \psi_{x}^{\lambda^2}}{z_{\lambda^1 \lambda^2}}
 + \\
 \frac{1}{2}&
 \sum_{n, \lambda_o^1 + \lambda_o^2 + \lambda_e^1 + \lambda_e^2 \vdash
 n}\chi(\sigma_{\lambda_o^1 \lambda_o^2 \lambda_e^1 \lambda_e^2})
-\frac{\psi_{x, y}^{\lambda_e^1 + \lambda_o^2} \psi_{x}^{\lambda_e^2 + 
+\frac{\psi_{x, y, y}^{\lambda_e^1 + \lambda_o^2} \psi_{x}^{\lambda_e^2 + 
 \lambda_o^1}}{z_{\lambda_o^1 \lambda_o^2 \lambda_e^1 \lambda_e^2}}
 \end{split}
 \end{equation}
@@ -317,7 +319,7 @@ y_3, \dots$). Однако, формула \ref{eq:h-fr} подсказывае�
 индекс отвечающий моноцветам получается, после обнуления $y_i$.
 \begin{equation*}
 \begin{split}
-\psi_{x, y}^i \circ \mathcal Z_G = 
+\psi_{x, y, y}^i \circ \mathcal Z_G = 
 Z_G(&\psi_x^i, \psi_x^{2i}, \psi_x^{3i}, \dots,\\
 	&\psi_{x,y}^i, \psi_{x,y}^{2i}, \psi_{x,y}^{3i}, \dots)
 \end{split}
