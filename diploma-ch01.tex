@@ -486,10 +486,52 @@ $$
 даст выполнение формулы \ref{eq:comp} для exp-производящей функции просто
 labeled-структур. А значит и обычной производящей функции unlabeled-структур.
 
-\subsubsection{Примеры [TODO]}
+\subsubsection{Примеры}
+Посчитаем $(\mathcal Z^{(1)}, \mathcal Z^{(2)})(\dB \circ \dA)$
+$$
+\mathcal Z^{(1)}(\dB \circ \dA) = \psi_{x}^1 \circ \psi_{x, y}^1 = \psi_{x, y}^1
+= \mathcal Z^{(1)}(\dA)
+$$ 
+$$
+\mathcal Z^{(2)}(\dB \circ \dA) = \psi_{y}^1 \circ 0 = 0 = \mathcal Z^{(2)}(\dA)
+$$
+Да и вобще, справедливо
+$$
+\mathcal Z^{(1)}(\dB \circ A) = \mathcal Z^{(1)}(A)
+$$ 
+$$
+\mathcal Z^{(2)}(\dB \circ A) = \mathcal Z^{(2)}(A)
+$$
+А так же
+$$
+\mathcal Z^{(1)}(A \circ \dB) = \mathcal Z^{(1)}(A)
+$$ 
+$$
+\mathcal Z^{(2)}(A \circ \dB) = \mathcal Z^{(2)}(A)
+$$
+Это дает некоторое понимание композиции. Так $A \circ \dB = \dB \circ A = A$.
+То есть \dB является единицей в монойде h-species по композиции.
+Это несколько контр-интуитивно, поскольку в обычных species нейтральным
+элементом являеться одноточечное множество. А его образ при вложении в h-species
+являеться \dA. [TODO А не значит ли это что просто можно по другому вложить?]
+
+Интересно посмотреть чем является \dA. Например
+\begin{equation}
+\begin{split}
+\Zfull(\dBB \circ \dA) = \frac{1}{2} (\frac{1}{2}(\psi_{x,y,y}^1 +
+\psi_{x}^1))^2 + \frac{1}{2} (\frac{1}{2}(\psi_{x,y,y}^2 +
+\psi_{x}^2)) = \\
+\frac{1}{8}((\psi_{x}^1)^2 + (\psi_{x, y, y}^1)^2 +
+2\psi_{x, y, y}^2 + 2(\psi_{x, y, y}^1\psi_{x}^1) + 2\psi_{x}^2) =
+\Zfull(\dAA)
+\end{split}
+\end{equation}
+Откуда можно сделать вывод, что $\dBB \circ \dA = \dAA$.
+То есть подстановка \dA, это <<стирание различий между противоположными
+гранями>>.
 
 \subsubsection{Предложения [TODO]}
-$$(\mathcal Z^{(1)}_G, \mathcal Z^{(2)}_G )
+$$(\mathcal Z^{(1)}_G, \mathcal Z^{(2)}_G)
 (\psi_x^1, \psi_x^2, \psi_x^3, \dots, 
 \psi_{x,y,y}^1, \psi_{x,y,y}^2, \psi_{x,y,y}^3, \dots)
  = (\mathcal Z_G(\psi_{x,y}^1, \psi_{x,y}^2, \psi_{x,y}^3, \dots), 0)$$
