@@ -194,6 +194,42 @@ plus .2ex}
 % Оглавление
 \tableofcontents
 
+%-------------------------------------------------------------------------------
+% New commands
+\newcommand{\dA}{
+\begin{tikzpicture}
+\draw (0pt,2pt) -- (0pt,6pt);
+\draw (0pt,0pt) circle (2pt);
+\draw (0pt,8pt) circle (2pt);
+\end{tikzpicture}
+} 
+
+\newcommand{\dB}{
+\begin{tikzpicture}
+\draw (0pt,2pt) -- (0pt,6pt);
+\draw[fill] (0pt,0pt) circle (2pt);
+\draw (0pt,8pt) circle (2pt);
+\end{tikzpicture}
+} 
+
+\newcommand{\dAA}{
+\begin{tikzpicture}
+\draw (0pt,0pt) -- (0pt,8pt);
+\draw (0pt,0pt) -- (8pt,0pt);
+\draw (8pt,8pt) -- (0pt,8pt);
+\draw (8pt,8pt) -- (8pt,0pt);
+\end{tikzpicture}
+} 
+
+\newcommand{\dAB}{
+\begin{tikzpicture}
+\draw[line width=1.5pt] (0pt,0pt) -- (0pt,8pt);
+\draw[line width=1.5pt] (0pt,0pt) -- (8pt,0pt);
+\draw (8pt,8pt) -- (0pt,8pt);
+\draw (8pt,8pt) -- (8pt,0pt);
+\end{tikzpicture}
+} 
+
 % ------------------------------------------------------------------------------
 % Текст работы
 \begin{onehalfspacing}
