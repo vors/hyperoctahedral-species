@@ -209,6 +209,60 @@ n}\chi(\sigma_{\lambda_o^1 \lambda_o^2 \lambda_e^1 \lambda_e^2})
 Где $\lambda_o$ --- циклы нечетной длинны, $\lambda_e$ ---
 циклы четной длинны.
 
+Откуда легко получить
+\begin{equation}
+\mathcal Z_F^{(1)} = 
+\sum_{n, \lambda_o^1 + \lambda_o^2 + \lambda_e^1 + \lambda_e^2 \vdash
+n}\chi(\sigma_{\lambda_o^1 \lambda_o^2 \lambda_e^1 \lambda_e^2})
+\frac{\psi_{x, y, y}^{\lambda_e^1 + \lambda_o^2} \psi_{x}^{\lambda_e^2 + 
+\lambda_o^1}}{z_{\lambda_o^1 \lambda_o^2 \lambda_e^1 \lambda_e^2}}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+\mathcal Z_F^{(2)} = 
+\frac{1}{2}&
+\sum_{n, \lambda^1 + \lambda^2 \vdash n}\chi(\sigma_{\lambda^1 \lambda^2})
+\frac{\psi_{x, y, y}^{\lambda^1} \psi_{x}^{\lambda^2}}{z_{\lambda^1 \lambda^2}}
+- \\
+\frac{1}{2}&
+\sum_{n, \lambda_o^1 + \lambda_o^2 + \lambda_e^1 + \lambda_e^2 \vdash
+n}\chi(\sigma_{\lambda_o^1 \lambda_o^2 \lambda_e^1 \lambda_e^2})
+\frac{\psi_{x, y, y}^{\lambda_e^1 + \lambda_o^2} \psi_{x}^{\lambda_e^2 + 
+\lambda_o^1}}{z_{\lambda_o^1 \lambda_o^2 \lambda_e^1 \lambda_e^2}}
+\end{split}
+\end{equation}
+
+\subsubsection{Примеры}
+Посчитаем цикленные индексы для простых h-species.
+Здесь мы будем писать $Z(A)$ вместо $Z_A$. Это не должно вызывать путаницу,
+поскольку вместо $A$ будут использоваться схематические картинки и их
+не перепутать с переменными, от которых считаеться цикленный индекс. 
+
+Структура <<одна пара граней>>, будем символически писать \dA.
+$$
+\Zfull(\dA) = \frac{1}{2}(\psi_{x,y,y}^1 + \psi_{x}^1) = \psi_{x,y}^1
+$$
+$$
+\mathcal Z^{(1)}(\dA) = \frac{1}{2}(\psi_{x}^1 + \psi_{x, y, y}^1) = \psi_{x,y}^1
+$$
+Значит
+$$
+\mathcal Z^{(2)}(\dA) = 0
+$$
+
+Структура <<одна пара граней, грани различаются>>. Обозначение \dB.
+$$
+\Zfull(\dB) = \frac{1}{2}(2\psi_{x,y,y}^1 + 0\psi_{x}^1) = \psi_{x,y,y}^1
+$$
+$$
+\mathcal Z^{(1)}(\dB) = \frac{1}{2}(2\psi_{x}^1 + 0\psi_{x, y, y}^1) = \psi_{x}^1
+$$
+Значит
+$$
+\mathcal Z^{(2)}(\dA) = \psi_{y}^1
+$$
+
 \subsection{Сумма и произведение цикленных индексов}
 \subsubsection{Сумма}
 Сумма цикленных индексов соответсвует поточечной сумме аналитических
@@ -242,11 +296,9 @@ $$
 Что логично, поскольку $(\mathcal Z_F^{(1)} + 2\mathcal Z_F^{(2)})$ --- это
 цикленный индекс для цветов, с <<забытой>> инволюцией.
 
-\subsection{Примеры}
-Посчитаем цикленные индексы для простых h-species.
-$$
-\mathcal Z(\dA) + \mathcal Z(\dB) + \mathcal Z(\dAA) + \mathcal Z(\dAB)
-$$
+\subsubsection{Примеры}
+Посчитаем произведение уже известных h-структур и их цикленных индексов. TODO
+
 \subsection{Цикленный индекс композиции}
 \subsubsection{Случай обычных species}
 Аналитический функтор позволяет дать определние композиционного произведения
