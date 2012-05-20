@@ -28,38 +28,54 @@
 
 \begin{frame}
 \titlepage
+\begin{center}
+\begin{small}
+Научный руководитель Константин Игоревич Пименов
+\end{small}
+\end{center}
 \end{frame}
 
 
 \begin{frame}{Введение}
-Обычные species $\widehat{\mathbb B}$ (Joyal)
-$$
-F\colon \mathbb{B} \rightarrow \mathbf{Set}
-$$
+Комбинаторные типы (species) $F\colon \mathbb{B} \rightarrow
+\mathbf{Set}$ (Joyal, 1990-ые). Определил сумму, произведение и композицию
+(через композицию аналитических функторов).
 
 Комбинаторная интерпретация --- структуры на точках.
 \begin{figure}
-   \includegraphics[height=20mm]{species.jpg}
+   \includegraphics[height=15mm]{species.jpg}
 \end{figure}
-\end{frame}
 
-\begin{frame}{Введение}
-H-species (Bergeron)
-$$
-F\colon \mathbb{HB} \rightarrow \mathbf{HSet}
-$$
-Комбинаторная интерпретация --- структуры на гранях куба.
+Гипероктаэдральные комбинаторные типы
+(H-species) $F\colon \mathbb{HB} \rightarrow \mathbf{HSet}$ (Bergeron, 1996).
+Определил сумму, произведение, но остался вопрос о композиции.
+
+Комбинаторная интерпретация --- структуры на гранях куба?
 $$
 \dA, \dB, \dAA, \dBB
 $$
 \end{frame}
 
-\begin{frame}{Аналитический функтор}
-Аналогично species, аналитический функтор для h-species является левым
-расширением по Кану функтора $F$ относительно $i$.
+\begin{frame}{Постановка задачи}
+\begin{enumerate}[*]
+\item Разработать комбинаторный язык для h-species.
+\item Определить композицию h-species
+\end{enumerate}
+\end{frame}
 
+\begin{frame}{Аналитический функтор}
+Аналитический функтор является левым расширением по Кану функтора $F$
+относительно $i$.
+\begin{center}
 \begin{tikzpicture}
-\label{comm:h-an}
+	\node (B) {$B$};
+	\node (S1) [below of=B] {$Set$};
+	\node (S2) [right of=B, node distance=3cm] {$Set$};
+	\draw [right hook->] (B) to node [swap] {$i$} (S1);
+	\draw [->] (B) to node {$F$} (S2);
+	\draw [->] (S1) to node [swap] {$\mathcal F$} (S2);	
+\end{tikzpicture}
+\begin{tikzpicture}
 	\node (B) {$HB$};
 	\node (S1) [below of=B] {$HSet$};
 	\node (S2) [right of=B, node distance=3cm] {$HSet$};
@@ -67,47 +83,50 @@ $$
 	\draw [->] (B) to node {$F$} (S2);
 	\draw [->] (S1) to node [swap] {$\mathcal F$} (S2);
 \end{tikzpicture}
-
-\begin{equation*}
-\label{eq:h-an}
-	\mathcal F = \sum\limits_n F[\Bar n] \times A^{\Bar n} / B_n
-\end{equation*}
-Где $A^{\Bar n}$ задает отображение, сохраняющее инволюцию. Раскраска.
+\end{center}
+$$
+\mathcal F = \sum\limits_n F[n] \times A^{n} / S_n
+$$                   
+$$
+\mathcal F = \sum\limits_n F[\Bar n] \times A^{\Bar n} / B_n
+$$
+Где $A^{\Bar n}$ задает отображение, сохраняющее инволюцию. Это раскраска.
 \end{frame}
 
 \begin{frame}{Цикленный индекс}
-\begin{enumerate}[*]
-\item Процедура декатегорификации.
-\item Морфизм из моноидальной категории в какую-то алгебру функций.
-\item Весовая функция (один вес для орбиты).
-\item Коэффициент при мономе соотвествующий весу.
-\item Моноцвета и бицвета. 
-\item Моноструктуры и биструктуры.
-\item В отличии от обычных species, для h-species разумно рассматривать пару
-$(\mathcal Z^{(1)}, \mathcal Z^{(2)})$ --- для моноструктур и биструктур.
-\item Считаем относительно переменных $x_i, y_i$. В симметричных функциях
-$\psi_{x}, \psi_{x, y, y}$.
-\end{enumerate}
+Цикленный индекс --- результат декатегорификации аналитического функтора.
+Морфизм из моноидальной категории в какую-либо алгебру. Новое: моноцвета и
+бицвета. Моноструктуры и биструктуры. В отличии от обычных species, для
+h-species разумно рассматривать пару $(\mathcal Z^{(1)}, \mathcal Z^{(2)})$ ---
+для моноструктур и биструктур. Удобно рассмотреть базис $\psi_{x}, \psi_{x, y,
+y}$.
 \end{frame}
 
 \begin{frame}{Формулы для цикленного индекса}
+Species
+$$
+\mathcal Z_F = 
+\sum_{n, \lambda \vdash n}\chi(\sigma_{\lambda})
+\frac{\psi_{x}^{\lambda}}{z_{\lambda}}
+$$
+
+H-species
 \begin{equation}
-\begin{split}
-\mathcal Z_F^{(1)} + 2\mathcal Z_F^{(2)} = 
-\sum_{n}\frac{1}{2^{n}n!}\sum_{\sigma \in B_n}&\chi(\sigma)
-\psi_{x, y, y}^{\lambda^1(\sigma)} \psi_{x}^{\lambda^2(\sigma)} = \\
-\sum_{n, \lambda^1 + \lambda^2 \vdash n}&\chi(\sigma_{\lambda^1 \lambda^2})
-\frac{\psi_{x, y, y}^{\lambda^1} \psi_{x}^{\lambda^2}}{z_{\lambda^1 \lambda^2}}
-\end{split}
+\label{eq:h-fr2}
+\mathcal Z_F^{(1)} = 
+\sum_{n, \lambda_o^1 + \lambda_o^2 + \lambda_e^1 + \lambda_e^2 \vdash
+n}\chi(\sigma_{\lambda_o^1 \lambda_o^2 \lambda_e^1 \lambda_e^2})
+\frac{\psi_{x, y, y}^{\lambda_e^1 + \lambda_o^2} \psi_{x}^{\lambda_e^2 + 
+\lambda_o^1}}{z_{\lambda_o^1 \lambda_o^2 \lambda_e^1 \lambda_e^2}}
 \end{equation}
 
 \begin{equation}
 \begin{split}
-\mathcal Z_F^{(1)} + \mathcal Z_F^{(2)} = 
+\mathcal Z_F^{(2)} = 
 \frac{1}{2}&
 \sum_{n, \lambda^1 + \lambda^2 \vdash n}\chi(\sigma_{\lambda^1 \lambda^2})
 \frac{\psi_{x, y, y}^{\lambda^1} \psi_{x}^{\lambda^2}}{z_{\lambda^1 \lambda^2}}
-+ \\
+- \\
 \frac{1}{2}&
 \sum_{n, \lambda_o^1 + \lambda_o^2 + \lambda_e^1 + \lambda_e^2 \vdash
 n}\chi(\sigma_{\lambda_o^1 \lambda_o^2 \lambda_e^1 \lambda_e^2})
@@ -120,8 +139,20 @@ n}\chi(\sigma_{\lambda_o^1 \lambda_o^2 \lambda_e^1 \lambda_e^2})
 циклы четной длинны.
 \end{frame}
 
-\begin{frame}{Формула для композиционного произведения}
-\begin{equation}
+\begin{frame}{Формулы для композиционного произведения}
+Species:
+\begin{equation*}
+\begin{split}
+	\mathcal Z_{F \circ G} (\psi_x^1, \psi_x^2, \psi_x^3, \dots ) = \mathcal Z_F(
+		&\mathcal Z^{(1)}_G(\psi_x^1, \psi_x^2, \psi_x^3, \dots), 
+		\mathcal Z^{(1)}_G(\psi_x^2, \psi_x^4, \psi_x^6, \dots), \\ 
+		&\mathcal Z^{(1)}_G(\psi_x^3, \psi_x^6, \psi_x^9, \dots), 
+		\dots)
+\end{split}
+\end{equation*}
+
+H-Species:
+\begin{equation*}
 \begin{split}
 	\mathcal Z^{(1)/(2)}_{F \circ G} (&\psi_x^1, \psi_x^2, \psi_x^3, \dots, 
 	\psi_{x,y,y}^1, \psi_{x,y,y}^2, \psi_{x,y,y}^3, \dots) = \\
@@ -131,36 +162,15 @@ n}\chi(\sigma_{\lambda_o^1 \lambda_o^2 \lambda_e^1 \lambda_e^2})
 		&\mathcal Z^{(1)}_G(\psi_x^2, \psi_x^4, \psi_x^6, \dots, 
 					 \psi_{x, y, y}^2, \psi_{x, y, y}^4, \psi_{x, y, y}^6, \dots), \\
 		&\mathcal Z^{(1)}_G(\psi_x^3, \psi_x^6, \psi_x^9, \dots, 
-					 \psi_{x, y, y}^3, \psi_{x, y, y}^6, \psi_{x, y, y}^9, \dots), \\
-		&\dots, \\
+					 \psi_{x, y, y}^3, \psi_{x, y, y}^6, \psi_{x, y, y}^9, \dots), \dots, \\
 		&\Zfull_G(\psi_x^1, \psi_x^2, \psi_x^3, \dots, 
 					 \psi_{x,y,y}^1, \psi_{x,y,y}^2, \psi_{x,y,y}^3, \dots), \\
 		&\Zfull_G(\psi_x^2, \psi_x^4, \psi_x^6, \dots, 
 					 \psi_{x,y,y}^2, \psi_{x,y,y}^4, \psi_{x,y,y}^6, \dots), \\
 		&\Zfull_G(\psi_x^3, \psi_x^6, \psi_x^9, \dots, 
-					 \psi_{x,y,y}^3, \psi_{x,y,y}^6, \psi_{x,y,y}^9, \dots), \\
-		&\dots
+					 \psi_{x,y,y}^3, \psi_{x,y,y}^6, \psi_{x,y,y}^9, \dots), \dots
 	)
 \end{split}	
-\end{equation}
-\end{frame}
-
-\begin{frame}{Формула для композиционного произведения для простых
-симметрических функций}
-\begin{equation*}
-\begin{split}
-\psi_x^i \circ (\mathcal Z^{(1)}_G, \mathcal Z^{(2)}_G ) = \mathcal Z^{(1)}_G
-(&\psi_x^i, \psi_x^{2i}, \psi_x^{3i}, \dots, \\
-&\psi_x^i, \psi_x^{2i}, \psi_x^{3i}, \dots)
-\end{split}
-\end{equation*}
-
-\begin{equation*}
-\begin{split}
-\psi_{x,y,y}^i \circ (\mathcal Z^{(1)}_G, \mathcal Z^{(2)}_G ) = \Zfull_G
-(&\psi_x^i, \psi_x^{2i}, \psi_x^{3i}, \dots, \\
-&\psi_x^i, \psi_x^{2i}, \psi_x^{3i}, \dots)
-\end{split}
 \end{equation*}
 \end{frame}
 
@@ -181,8 +191,15 @@ $$\dBB \circ \dA = \dAA$$
 \end{enumerate}
 \end{frame}
 
-\begin{frame}{Конец}
-Спасибо за внимание!
+\begin{frame}{Заключение}
+Результат:
+\begin{enumerate}[*]
+\item Начата разработатка комбинаторного языка для h-species.
+\item Написана явная формула для цикленного индекса.
+\item Написана формула для композиции цикленных индексов.
+\item Произведены явные вычисления для нескольких содержательных примеров,
+результаты согласуются с комбинаторной интуицией и помогают ее развить.
+\end{enumerate}
 \end{frame}
 
 \end{document}
