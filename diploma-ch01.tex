@@ -535,5 +535,26 @@ $$(\mathcal Z^{(1)}_G, \mathcal Z^{(2)}_G)
 (\psi_x^1, \psi_x^2, \psi_x^3, \dots, 
 \psi_{x,y,y}^1, \psi_{x,y,y}^2, \psi_{x,y,y}^3, \dots)
  = (\mathcal Z_G(\psi_{x,y}^1, \psi_{x,y}^2, \psi_{x,y}^3, \dots), 0)$$
- Где $G$ --- обычный species, вложенный в h-species. А $\mathcal Z_G$ --- его
- цикленный индекс.
+
+Где $G$ --- обычный species, вложенный в h-species. А $\mathcal Z_G$ --- его
+цикленный индекс.
+ 
+\subsection{Примеры [TODO]}
+Посчитаем для структуры $V$ <<вершина куба>>.
+$$
+\Zfull(V) = e^{\psi_{x,y,y}^{1} + \frac{\psi_{x,y,y}^{2}}{2!} +
+\frac{\psi_{x,y,y}^{3}}{3!} + \dots} 
+$$
+
+$$
+\mathcal Z^{(1)}(V) = e^{(\psi_{x}^{1} + \frac{\psi_{x}^{2}}{2!} +
+\frac{\psi_{x}^{3}}{3!} + \dots) + (\psi_{y}^{2} + \frac{\psi_{y}^{4}}{2!} +
+\frac{\psi_{y}^{6}}{3!} + \dots)} 
+$$
+
+Для структуры куба $H$ <<куб>>.
+$$
+\Zfull(H) = \mathcal Z^{(1)}(H) = e^{\psi_{x,y}^{1} +
+\frac{\psi_{x,y}^{2}}{2!} + \frac{\psi_{x,y}^{3}}{3!} + \dots} 
+$$
+Нетрудно убедится что $\mathcal Z^{(i)}(V \circ \dA) = \mathcal Z^{(i)}(H)$.
