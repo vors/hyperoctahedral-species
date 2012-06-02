@@ -5,6 +5,11 @@
 \theoremstyle{definition}
 \newtheorem{example}{Пример}
 \newtheorem{remark}[theorem]{Замечание}
+\newtheorem{problem}{Задача}
+
+\newenvironment{solution}[1][\proofname]{%
+  \proof[Решение]%
+}{\endproof}
 %-------------------------------------------------------------------------------
 % New commands
 \newcommand{\Zfull}{[\mathcal Z^{(1)} + 2\mathcal Z^{(2)}]}
