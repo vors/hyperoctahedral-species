@@ -391,23 +391,16 @@ $$
 Теперь попробуем выстроить теорию композиции цикленного индекса для h-species,
 параллельно теории species. В качестве моноцветов возьмем $\{x_1, x_2, x_3,
 \dots\}$, бицветов --- $\{y_1, y_2, y_3, \dots\}$. Формулы \ref{eq:h-fr1} и
-\ref{eq:h-fr2} подсказывают, что в качестве симметричного базиса можно брать не
-$\{\psi_x^i, \psi_y^j\}$ а $\{\psi_x^i, \psi_{x,y,y}^j\}$. Впрочем это
-тривиальная замена переменных.
+\ref{eq:h-fr2} подсказывают, что на практике в качестве симметричного базиса
+можно брать не $\{\psi_x^i, \psi_y^j\}$ а $\{\psi_x^i, \psi_{x,y,y}^j\}$. Или
+другую линейную комбинацию, например $\{\psi_x^i, \psi_{x,y}^j\}$.
 
 \begin{problem}
 Как выразить
 \begin{equation*}
 \begin{split}
-\mathcal Z^{(1)}_{F \circ G} (&\psi_x^1, \psi_x^2, \psi_x^3, \dots, \\
-						&\psi_{x,y,y}^1, \psi_{x,y,y}^2, \psi_{x,y,y}^3, \dots)
-\end{split}
-\end{equation*}
-
-\begin{equation*}
-\begin{split}
-\mathcal Z^{(2)}_{F \circ G} (&\psi_x^1, \psi_x^2, \psi_x^3, \dots, \\
-						&\psi_{x,y,y}^1, \psi_{x,y,y}^2, \psi_{x,y,y}^3, \dots)
+\mathcal Z^{(i)}_{F \circ G} (&\psi_x^1, \psi_x^2, \psi_x^3, \dots, \\
+						&\psi_y^1, \psi_y^2, \psi_y^3, \dots)
 \end{split}
 \end{equation*}
 \end{problem}
@@ -417,21 +410,21 @@ $\{\psi_x^i, \psi_y^j\}$ а $\{\psi_x^i, \psi_{x,y,y}^j\}$. Впрочем эт�
 \begin{split}
 \label{eq:h-zfg}
 	\mathcal Z^{(i)}_{F \circ G} (\psi_x^1, \psi_x^2, \psi_x^3, &\dots, 
-	\psi_{x,y,y}^1, \psi_{x,y,y}^2, \psi_{x,y,y}^3, \dots) = \\
+	\psi_y^1, \psi_y^2, \psi_y^3, \dots) = \\
 	\mathcal Z_F^{(i)}(
 		&\mathcal Z^{(1)}_G(\psi_x^1, \psi_x^2, \psi_x^3, \dots, 
-					 \psi_{x, y, y}^1, \psi_{x, y, y}^2, \psi_{x, y, y}^3, \dots), \\
+					 \psi_y^1, \psi_y^2, \psi_y^3, \dots), \\
 		&\mathcal Z^{(1)}_G(\psi_x^2, \psi_x^4, \psi_x^6, \dots, 
-					 \psi_{x, y, y}^2, \psi_{x, y, y}^4, \psi_{x, y, y}^6, \dots), \\
+					 \psi_y^2, \psi_y^4, \psi_y^6, \dots), \\
 		&\mathcal Z^{(1)}_G(\psi_x^3, \psi_x^6, \psi_x^9, \dots, 
-					 \psi_{x, y, y}^3, \psi_{x, y, y}^6, \psi_{x, y, y}^9, \dots), \\
+					 \psi_y^3, \psi_y^6, \psi_y^9, \dots), \\
 		&\dots, \\
-		&\Zfull_G(\psi_x^1, \psi_x^2, \psi_x^3, \dots, 
-					 \psi_{x,y,y}^1, \psi_{x,y,y}^2, \psi_{x,y,y}^3, \dots), \\
-		&\Zfull_G(\psi_x^2, \psi_x^4, \psi_x^6, \dots, 
-					 \psi_{x,y,y}^2, \psi_{x,y,y}^4, \psi_{x,y,y}^6, \dots), \\
-		&\Zfull_G(\psi_x^3, \psi_x^6, \psi_x^9, \dots, 
-					 \psi_{x,y,y}^3, \psi_{x,y,y}^6, \psi_{x,y,y}^9, \dots), \\
+		&\Ztwo_G(\psi_x^1, \psi_x^2, \psi_x^3, \dots, 
+					 \psi_y^1, \psi_y^2, \psi_y^3, \dots), \\
+		&\Ztwo_G(\psi_x^2, \psi_x^4, \psi_x^6, \dots, 
+					 \psi_y^2, \psi_y^4, \psi_y^6, \dots), \\
+		&\Ztwo_G(\psi_x^3, \psi_x^6, \psi_x^9, \dots, 
+					 \psi_y^3, \psi_y^6, \psi_y^9, \dots), \\
 		&\dots
 	)
 \end{split}	
@@ -439,17 +432,17 @@ $\{\psi_x^i, \psi_y^j\}$ а $\{\psi_x^i, \psi_{x,y,y}^j\}$. Впрочем эт�
 Эта формула слишком грамоздкая, поэтому напишем ее на уровне членов:
 \begin{equation*}
 \begin{split}
-\psi_x^i \circ (\mathcal Z^{(1)}_G, \mathcal Z^{(2)}_G ) = \mathcal Z^{(1)}_G
+\psi_x^i \circ (\mathcal Z^{(1)}_G, \mathcal Z^{(2)}_G ) = \Zone_G
 (&\psi_x^i, \psi_x^{2i}, \psi_x^{3i}, \dots, \\
-&\psi_{x,y,y}^i, \psi_{x,y,y}^{2i}, \psi_{x,y,y}^{3i}, \dots)
+&\psi_y^i, \psi_y^{2i}, \psi_y^{3i}, \dots)
 \end{split}
 \end{equation*}
 
 \begin{equation*}
 \begin{split}
-\psi_{x,y,y}^i \circ (\mathcal Z^{(1)}_G, \mathcal Z^{(2)}_G ) = \Zfull_G
+\psi_y^i \circ (\mathcal Z^{(1)}_G, \mathcal Z^{(2)}_G ) = \Ztwo_G
 (&\psi_x^i, \psi_x^{2i}, \psi_x^{3i}, \dots, \\
-&\psi_{x,y,y}^i, \psi_{x,y,y}^{2i}, \psi_{x,y,y}^{3i}, \dots)
+&\psi_y^i, \psi_y^{2i}, \psi_y^{3i}, \dots)
 \end{split}
 \end{equation*}
 \end{theorem}
@@ -462,7 +455,7 @@ $$
 \psi_{x}^1 = t, \psi_{x}^k = 0, k>1
 $$
 $$
-\psi_{x,y,y}^1 = s, \psi_{x,y,y}^k = 0, k>1
+\psi_y^1 = s, \psi_y^k = 0, k>1
 $$
 То полученная формула показывает, что \ref{eq:comp} справедливо для
 экспоненциальных производящих функций bilabeled-структур (то есть производящая
@@ -486,25 +479,20 @@ $$
 \begin{example}
 Да и вобще, справедливо
 $$
-\mathcal Z^{(1)}(\dB \circ A) = \mathcal Z^{(1)}(A)
+\mathcal Z^{(i)}(\dB \circ A) = \mathcal Z^{(i)}(A)
 $$ 
 $$
-\mathcal Z^{(2)}(\dB \circ A) = \mathcal Z^{(2)}(A)
-$$
-А так же
-$$
-\mathcal Z^{(1)}(A \circ \dB) = \mathcal Z^{(1)}(A)
-$$ 
-$$
-\mathcal Z^{(2)}(A \circ \dB) = \mathcal Z^{(2)}(A)
+\mathcal Z^{(i)}(A \circ \dB) = \mathcal Z^{(i)}(A)
 $$
 \end{example}
-Это дает некоторое понимание композиции. Так $A \circ \dB = \dB \circ A = A$.
-То есть \dB является нейтральным элементом в монойде h-species по композиции.
+\begin{remark}
+Это дает некоторое понимание композиции. Так видимо $A \circ \dB = \dB \circ A =
+A$. То есть \dB является нейтральным элементом в монойде h-species по
+композиции.
 Это несколько контр-интуитивно, поскольку в обычных species нейтральным
 элементом являеться одноточечное множество. А его образом при вложении species в
 h-species являеться \dA.
-
+\end{remark}
 \begin{example}
 Интересно посмотреть на композицию с \dA
 \begin{equation}
