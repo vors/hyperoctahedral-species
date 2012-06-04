@@ -1,12 +1,13 @@
 % Theorems
-\newtheorem{theorem}{Теорема}
+\newtheorem{theorem}{Теорема}%[section]
 \newtheorem{statement}[theorem]{Утверждение}
 
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Определение}
-\newtheorem{example}{Пример}
+\newtheorem{example}{Пример}%[section]
 \newtheorem{remark}[theorem]{Замечание}
-\newtheorem{problem}{Задача}
+\newtheorem{proposal}[theorem]{Предложение}
+\newtheorem{problem}{Задача}%[section]
 
 \newenvironment{solution}[1][\proofname]{%
   \proof[Решение]%
@@ -58,3 +59,64 @@
 \draw (8pt,8pt) -- (8pt,0pt);
 \end{tikzpicture}
 } 
+%-------------------------------------------------------------------------------
+% Large draw commands
+\newcommand{\dheA}
+{
+\begin{tikzpicture}
+\draw [<->] (5pt, 0pt) -- (15pt, 0pt);
+\draw [<->] (5pt, 20pt) -- (15pt, 20pt);
+\draw[fill] (0pt,0pt) circle (3pt);
+\draw[fill] (0pt, 20pt) circle (3pt);
+\draw[fill] (20pt, 0pt) circle (3pt);
+\draw[fill] (20pt, 20pt) circle (3pt);
+\end{tikzpicture}
+}
+
+\newcommand{\dheB}
+{
+\begin{tikzpicture}
+\draw [<->] (4pt, 4pt) -- (16pt, 16pt);
+\draw [<->] (4pt, 16pt) -- (16pt, 4pt);
+\draw[fill] (0pt,0pt) circle (3pt);
+\draw[fill] (0pt, 20pt) circle (3pt);
+\draw[fill] (20pt, 0pt) circle (3pt);
+\draw[fill] (20pt, 20pt) circle (3pt);
+\end{tikzpicture}
+}
+
+\newcommand{\dhoA}{
+\begin{tikzpicture}
+\draw [->] (5pt, 0pt) -- (15pt, 0pt);
+\draw [->] (5pt, 20pt) -- (15pt, 20pt);
+\draw [->] (25pt, 0pt) -- (35pt, 0pt);
+\draw [->] (25pt, 20pt) -- (35pt, 20pt);
+\draw [->] (40pt, -5pt) to [out=-135,in=-45] (0pt, -5pt);
+\draw [->] (40pt, 25pt) to [out=135,in=45] (0pt, 25pt);
+ 
+\draw[fill] (0pt,0pt) circle (3pt);
+\draw[fill] (0pt, 20pt) circle (3pt);
+\draw[fill] (20pt, 0pt) circle (3pt);
+\draw[fill] (20pt, 20pt) circle (3pt);
+\draw[fill] (40pt, 0pt) circle (3pt);
+\draw[fill] (40pt, 20pt) circle (3pt);
+\end{tikzpicture}
+}
+
+\newcommand{\dhoB}{
+\begin{tikzpicture}
+\draw [->] (4pt, 4pt) -- (16pt, 16pt);
+\draw [->] (4pt, 16pt) -- (16pt, 4pt);
+\draw [->] (24pt, 4pt) -- (36pt, 16pt);
+\draw [->] (24pt, 16pt) -- (36pt, 4pt);
+\draw [->] (45pt, 20pt) to [out=0,in=180] (-5pt, 0pt);
+\draw [->] (45pt, 0pt) to [out=0,in=180] (-5pt, 20pt);
+ 
+\draw[fill] (0pt,0pt) circle (3pt);
+\draw[fill] (0pt, 20pt) circle (3pt);
+\draw[fill] (20pt, 0pt) circle (3pt);
+\draw[fill] (20pt, 20pt) circle (3pt);
+\draw[fill] (40pt, 0pt) circle (3pt);
+\draw[fill] (40pt, 20pt) circle (3pt);
+\end{tikzpicture}
+}
