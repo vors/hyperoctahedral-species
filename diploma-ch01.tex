@@ -327,6 +327,21 @@ Z^{(1)}(\dBB)) = \frac{1}{2}(\psi_{y,y}^1\psi_{x}^1 +
 \frac{1}{2}(\psi_{y, y}^1)^2) = \psi_{y}^1\psi_{x}^1 + (\psi_{y}^1)^2 $$
 \end{example}
 
+\subsection{Цикленный индекс species, вложенных в h-species}
+\begin{statement}
+\label{st:h-cl-for-sp}
+Пусть $G$ --- обычный species, вложенный в h-species. $\mathcal Z_G$ --- его
+цикленный индекс.
+$$(\Zone_G, \Ztwo_G)
+(\psi_x^1, \psi_x^2, \psi_x^3, \dots, 
+\psi_y^1, \psi_y^2, \psi_y^3, \dots)
+ = (\mathcal Z_G(\psi_{x,y}^1, \psi_{x,y}^2, \psi_{x,y}^3, \dots), 0)$$
+\end{statement}
+\begin{proof}
+Очевидно, поскольку при таком вложении бицвет и моноцвет ничем не отличаются с
+точки зрения итоговой раскрашенной структуры. Они оба являются просто цветом.
+\end{proof}
+
 \subsection{Сумма и произведение цикленных индексов}
 \subsubsection{Сумма}
 Сумма цикленных индексов соответсвует поточечной сумме аналитических
@@ -523,19 +538,27 @@ h-species являеться \dA.
 \begin{example}
 Посчитаем для структуры $V$ <<вершина куба>>.
 $$
-\Zfull(V) = e^{\psi_{x,y,y}^{1} + \frac{\psi_{x,y,y}^{2}}{2} +
+\Zfull(V) = \prod_i \frac{1}{1 - x_i} \prod_j \frac{1}{(1 -
+y_j)^2} = e^{\psi_{x,y,y}^{1} + \frac{\psi_{x,y,y}^{2}}{2} +
 \frac{\psi_{x,y,y}^{3}}{3} + \dots} 
 $$
-Эта формула получается по аналогии с $\mathcal Z_{\E}$. Коофициент при мономе
-$x_1^{i_1}y_1^{j_1}\ldots$
+
+Коофициент при мономе $x_1^{i_1}x_2^{i_2}x_3^{i_3} \ldots
+y_1^{j_1}y_2^{j_2}y_3^{j_3} \ldots$ должен равнятся $(j_1+1)(j_2+1)(j_3+1)
+\ldots$, поскольку для моноцвета нет вариантов, а для бицвета количество
+вариантов это количество способов разбить кратность этого цвета на два
+сомножителя (поскольку каждая пара граней отличима). Остальное доказывается
+явным вычислением, аналогичным с $\mathcal Z_{\E}$ (обычный species).
 
 $$
-\Zone(V) = e^{(\psi_{x}^{1} + \frac{\psi_{x}^{2}}{2} +
-\frac{\psi_{x}^{3}}{3} + \dots) + (\psi_{y}^{2} + \frac{\psi_{y}^{4}}{2} +
+\Zone(V) = \prod_i \frac{1}{1 - x_i} \prod_j \frac{1}{(1 -
+y_j^2)} = e^{(\psi_{x}^{1} + \frac{\psi_{x}^{2}}{2} + \frac{\psi_{x}^{3}}{3} +
+\dots) + (\psi_{y}^{2} + \frac{\psi_{y}^{4}}{2} +
 \frac{\psi_{y}^{6}}{3} + \dots)} 
 $$
 
-Для структуры $H$ <<куб>>.
+
+Для структуры $H$ <<куб>> (см. утверждение \ref{st:h-cl-for-sp}).
 $$
 \Zfull(H) = \Zone(H) = e^{\psi_{x,y}^{1} +
 \frac{\psi_{x,y}^{2}}{2!} + \frac{\psi_{x,y}^{3}}{3!} + \dots} 
@@ -543,16 +566,6 @@ $$
 Тогда $\Zi(V \circ \dA) = \Zi(H)$, поскольку
 при специализации всех $y$ в $0$, они равны.
 \end{example}
-
-\subsection{Цикленный индекс species, вложенных в h-species}
-\begin{statement}
-Пусть $G$ --- обычный species, вложенный в h-species. $\mathcal Z_G$ --- его
-цикленный индекс.
-$$(\Zone_G, \Ztwo_G)
-(\psi_x^1, \psi_x^2, \psi_x^3, \dots, 
-\psi_y^1, \psi_y^2, \psi_y^3, \dots)
- = (\mathcal Z_G(\psi_{x,y}^1, \psi_{x,y}^2, \psi_{x,y}^3, \dots), 0)$$
-\end{statement}
 
 \subsection{Применение цикленного индекса к решению задачи о раскрасках}
 \begin{problem}
