@@ -440,8 +440,8 @@ $$
 случае обычных species, каждый цвет из $\Zi_G$ копируеться $k$ раз для $\psi^k$. 
 
 \begin{theorem}[О гипероктаэдральном плетизме]
-Справедливо следующее
 \label{th:z-main}
+Справедлив аналог утверждения \ref{th:compos}:
 \begin{equation}
 \begin{split}
 \label{eq:h-zfg}
@@ -467,24 +467,44 @@ $$
 \end{equation}
 \end{theorem}
 Формула громоздкая, поэтому напишем ее на уровне членов:
-\begin{equation*}
+\begin{equation}
+\label{eq:psi-x}
 \begin{split}
 \psi_x^i \circ (\Zone_G, \Ztwo_G ) = \Zone_G
 (&\psi_x^i, \psi_x^{2i}, \psi_x^{3i}, \dots, \\
 &\psi_y^i, \psi_y^{2i}, \psi_y^{3i}, \dots)
 \end{split}
-\end{equation*}
+\end{equation}
 
-\begin{equation*}
+\begin{equation}
+\label{eq:psi-y}
 \begin{split}
 \psi_y^i \circ (\Zone_G, \Ztwo_G ) = \Ztwo_G
 (&\psi_x^i, \psi_x^{2i}, \psi_x^{3i}, \dots, \\
 &\psi_y^i, \psi_y^{2i}, \psi_y^{3i}, \dots)
 \end{split}
-\end{equation*}
+\end{equation}
 
 \begin{proof}
-TODO: расписать элементарное доказательство
+Рассмотрим моном $\psi_x^{\lambda}\psi_y^{\mu} =
+\psi_x^{\lambda_1}\psi_x^{\lambda_2}\ldots\psi_x^{\lambda_k}\psi_y^{\mu_1}\psi_y^{\mu_2}\ldots\psi_y^{\mu_r}$
+из $\Zi_{F}$. Во что он превратится в $\Zi_{F \circ G}$? Композиция
+аналитических функторов --- замена набора цветов на набор раскрашенных
+структур.
+Согласно этому, моноцвета $\{x_1, x_2, x_3, \ldots\}$ заменятся на
+моноструктуры из $\Zone$. Значит $\psi_x^1$ превратится в $\Zone(\psi_x^1,
+\psi_x^2, \psi_x^3, \dots, \psi_y^1, \psi_y^2, \psi_y^3, \dots)$. А во что
+превратится $\psi_x^2$? Каждая моноструктура должна встречатся 2 раза.
+Значит, количество каждого цвета удвоится. Это соответствует замене в $\Zone$
+каждого $\psi_x^i$ на $\psi_x^{2i}$, $\psi_y^i$ на $\psi_y^{2i}$. То же самое
+для любого $l$: $\psi_x^i$ на $\psi_x^{li}$, $\psi_y^i$ на
+$\psi_y^{li}$. Так получается формула \ref{eq:psi-x}.
+
+Это рассуждение дословно повторяется для $\psi_y^l$, с заменой моноцвета на
+бицвет, моноструктуры на биструктуру и $\Zone$ на $\Ztwo$. Так получается
+формула \ref{eq:psi-y}.
+
+По мультипликативности результат продолжается до формулы \ref{eq:h-zfg}.
 \end{proof}
 
 \begin{remark}
