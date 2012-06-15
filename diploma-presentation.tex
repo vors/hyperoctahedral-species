@@ -20,7 +20,7 @@
 \include{diploma-common}
 
 \usetheme{Warsaw}
-\title{Гипероктаэдральные комбинаторные типы}
+\title{Гипероктаэдральные комбинаторные виды}
 \author{Сергей Воробьев}
 \institute{Санкт-Петербургский Государственный университет}
 \date{2012}
@@ -37,16 +37,17 @@
 
 
 \begin{frame}{Введение}
-Комбинаторные типы (species) $F\colon \mathbb{B} \rightarrow
-\mathbf{Set}$ (Joyal, 1990-ые). Определил сумму, произведение и композицию
-(через композицию аналитических функторов).
+Комбинаторные виды (species) $F\colon \mathbb{B} \rightarrow
+\mathbf{Set}$ (Joyal, 1980-ые). Определил сумму, произведение и композицию
+species. Композиции соответствует плетизм цикленных
+индексов.
 
 Комбинаторная интерпретация --- структуры на точках.
 \begin{figure}
    \includegraphics[height=15mm]{species.jpg}
 \end{figure}
 
-Гипероктаэдральные комбинаторные типы
+Гипероктаэдральные комбинаторные виды
 (H-species) $F\colon \mathbb{HB} \rightarrow \mathbf{HSet}$ (Bergeron, 1996).
 Определил сумму, произведение, но остался вопрос о композиции.
 
@@ -58,9 +59,21 @@ $$
 
 \begin{frame}{Постановка задачи}
 \begin{enumerate}[*]
-\item Разработать комбинаторный язык для h-species.
-\item Определить композицию h-species
+\item Определить цикленный индекс для гипероктаэдральных комбинаторных видов.
+\item Определить композицию и гипероктаэдральный плетизм.
+\item Развить комбинаторный подход серией примеров.
 \end{enumerate}
+\end{frame}
+
+\begin{frame}{Методология}
+Работа состоит из двух частей. Первая половина посвящена конспективному
+изложению теории обычных комбинаторных видов. Во второй части параллельно излагается теория для гипероктаэдральных
+комбинаторных видов.
+
+В первой главе, мы имели мощную комбинаторную интуицию, которая
+мотивировала категорные конструкции. Во второй, мы переносим категорные
+конструкции species на новый контекст и пытаемся дать комбинаторную
+интерпретацию получившимся результатам.
 \end{frame}
 
 \begin{frame}{Аналитический функтор}
@@ -84,63 +97,61 @@ $$
 	\draw [->] (S1) to node [swap] {$\mathcal F$} (S2);
 \end{tikzpicture}
 \end{center}
+Явная конструкция является спецификацией результата из заметки Akhil Mathew
+<<Dold-Kan correspondence>>
 $$
 \mathcal F = \sum\limits_n F[n] \times A^{n} / S_n
 $$                   
 $$
 \mathcal F = \sum\limits_n F[\Bar n] \times A^{\Bar n} / B_n
 $$
-Где $A^{\Bar n}$ задает отображение, сохраняющее инволюцию. Это раскраска.
+Здесь $A^{\Bar n}$ задает <<раскраску>>, сохраняющую инволюцию.
 \end{frame}
 
 \begin{frame}{Цикленный индекс}
 Цикленный индекс --- результат декатегорификации аналитического функтора.
-Морфизм из моноидальной категории в какую-либо алгебру. Новое: моноцвета и
-бицвета. Моноструктуры и биструктуры. В отличии от обычных species, для
-h-species разумно рассматривать пару $(\mathcal Z^{(1)}, \mathcal Z^{(2)})$ ---
-для моноструктур и биструктур. Удобно рассмотреть базис $\psi_{x}, \psi_{x, y,
-y}$.
+В отличии от обычных species, для h-species выяснилось, что плетизм можно
+определить, если рассмотреть пару симметрических функций
+$(\mathcal Z^{(1)}, \mathcal Z^{(2)})$. Эти две функции соответствуют двум
+видам орбит под действием инволюции: длины 1 и длины 2.
 \end{frame}
 
 \begin{frame}{Формулы для цикленного индекса}
-Species
+Комбинаторные виды
 $$
 \mathcal Z_F = 
 \sum_{n, \lambda \vdash n}\chi(\sigma_{\lambda})
 \frac{\psi_{x}^{\lambda}}{z_{\lambda}}
 $$
 
-H-species
+Гипероктаэдральные комбинаторные виды
 \begin{equation}
-\label{eq:h-fr2}
 \mathcal Z_F^{(1)} = 
-\sum_{n, \lambda_o^1 + \lambda_o^2 + \lambda_e^1 + \lambda_e^2 \vdash
-n}\chi(\sigma_{\lambda_o^1 \lambda_o^2 \lambda_e^1 \lambda_e^2})
-\frac{\psi_{x, y, y}^{\lambda_e^1 + \lambda_o^2} \psi_{x}^{\lambda_e^2 + 
-\lambda_o^1}}{z_{\lambda_o^1 \lambda_o^2 \lambda_e^1 \lambda_e^2}}
+\sum_{n, \lambda_o + \mu_o + \lambda_e + \mu_e \vdash
+n}\chi(\sigma_{\lambda_o \mu_o \lambda_e \mu_e})
+\frac{\psi_{x, y, y}^{\lambda_e + \mu_o} \psi_{x}^{\mu_e + 
+\lambda_o}}{z_{\lambda_o \mu_o \lambda_e \mu_e}}
 \end{equation}
 
 \begin{equation}
 \begin{split}
 \mathcal Z_F^{(2)} = 
 \frac{1}{2}&
-\sum_{n, \lambda^1 + \lambda^2 \vdash n}\chi(\sigma_{\lambda^1 \lambda^2})
-\frac{\psi_{x, y, y}^{\lambda^1} \psi_{x}^{\lambda^2}}{z_{\lambda^1 \lambda^2}}
+\sum_{n, \lambda + \mu \vdash n}\chi(\sigma_{\lambda \mu})
+\frac{\psi_{x, y, y}^{\lambda} \psi_{x}^{\mu}}{z_{\lambda \mu}}
 - \\
 \frac{1}{2}&
-\sum_{n, \lambda_o^1 + \lambda_o^2 + \lambda_e^1 + \lambda_e^2 \vdash
-n}\chi(\sigma_{\lambda_o^1 \lambda_o^2 \lambda_e^1 \lambda_e^2})
-\frac{\psi_{x, y, y}^{\lambda_e^1 + \lambda_o^2} \psi_{x}^{\lambda_e^2 + 
-\lambda_o^1}}{z_{\lambda_o^1 \lambda_o^2 \lambda_e^1 \lambda_e^2}}
+\sum_{n, \lambda_o + \mu_o + \lambda_e + \mu_e \vdash
+n}\chi(\sigma_{\lambda_o \mu_o \lambda_e \mu_e})
+\frac{\psi_{x, y, y}^{\lambda_e + \mu_o} \psi_{x}^{\mu_e + 
+\lambda_o}}{z_{\lambda_o \mu_o \lambda_e \mu_e}}
 \end{split}
 \end{equation}
 
-Где $\lambda_o$ --- циклы нечетной длинны, $\lambda_e$ ---
-циклы четной длинны.
 \end{frame}
 
-\begin{frame}{Формулы для композиционного произведения}
-Species:
+\begin{frame}{Формулы для плетизма}
+Плетизм
 \begin{equation*}
 \begin{split}
 	\mathcal Z_{F \circ G} (\psi_x^1, \psi_x^2, \psi_x^3, \dots ) = \mathcal Z_F(
@@ -151,36 +162,36 @@ Species:
 \end{split}
 \end{equation*}
 
-H-Species:
-\begin{equation*}
+Гипероктаэдральный плетизм (основная теорема)
+\begin{equation}
 \begin{split}
-	\mathcal Z^{(1)/(2)}_{F \circ G} (&\psi_x^1, \psi_x^2, \psi_x^3, \dots, 
-	\psi_{x,y,y}^1, \psi_{x,y,y}^2, \psi_{x,y,y}^3, \dots) = \\
-	\mathcal Z_F^{(1)/(2)}(
-		&\mathcal Z^{(1)}_G(\psi_x^1, \psi_x^2, \psi_x^3, \dots, 
-					 \psi_{x, y, y}^1, \psi_{x, y, y}^2, \psi_{x, y, y}^3, \dots), \\
-		&\mathcal Z^{(1)}_G(\psi_x^2, \psi_x^4, \psi_x^6, \dots, 
-					 \psi_{x, y, y}^2, \psi_{x, y, y}^4, \psi_{x, y, y}^6, \dots), \\
-		&\mathcal Z^{(1)}_G(\psi_x^3, \psi_x^6, \psi_x^9, \dots, 
-					 \psi_{x, y, y}^3, \psi_{x, y, y}^6, \psi_{x, y, y}^9, \dots), \dots, \\
-		&\Zfull_G(\psi_x^1, \psi_x^2, \psi_x^3, \dots, 
-					 \psi_{x,y,y}^1, \psi_{x,y,y}^2, \psi_{x,y,y}^3, \dots), \\
-		&\Zfull_G(\psi_x^2, \psi_x^4, \psi_x^6, \dots, 
-					 \psi_{x,y,y}^2, \psi_{x,y,y}^4, \psi_{x,y,y}^6, \dots), \\
-		&\Zfull_G(\psi_x^3, \psi_x^6, \psi_x^9, \dots, 
-					 \psi_{x,y,y}^3, \psi_{x,y,y}^6, \psi_{x,y,y}^9, \dots), \dots
+\label{eq:h-zfg}
+	\Zi_{F \circ G} (\psi_x^1, \psi_x^2, \psi_x^3, &\dots, 
+	\psi_y^1, \psi_y^2, \psi_y^3, \dots) = \\
+	\mathcal Z_F^{(i)}(
+		&\Zone_G(\psi_x^1, \psi_x^2, \psi_x^3, \dots, 
+					 \psi_y^1, \psi_y^2, \psi_y^3, \dots), \\
+		&\Zone_G(\psi_x^2, \psi_x^4, \psi_x^6, \dots, 
+					 \psi_y^2, \psi_y^4, \psi_y^6, \dots), \\
+		&\Zone_G(\psi_x^3, \psi_x^6, \psi_x^9, \dots, 
+					 \psi_y^3, \psi_y^6, \psi_y^9, \dots), \\
+		&\dots, \\
+		&\Ztwo_G(\psi_x^1, \psi_x^2, \psi_x^3, \dots, 
+					 \psi_y^1, \psi_y^2, \psi_y^3, \dots), \\
+		&\Ztwo_G(\psi_x^2, \psi_x^4, \psi_x^6, \dots, 
+					 \psi_y^2, \psi_y^4, \psi_y^6, \dots), \\
+		&\Ztwo_G(\psi_x^3, \psi_x^6, \psi_x^9, \dots, 
+					 \psi_y^3, \psi_y^6, \psi_y^9, \dots), \\
+		&\dots
 	)
 \end{split}	
-\end{equation*}
+\end{equation}
 \end{frame}
 
 \begin{frame}{Примеры}
+Из формулы гипероктаэрального плетизма цикленного индекса, следуют
+неочевидные примеры композиций. Вот простейшие из них:
 \begin{enumerate}[(1)]
-\item
-$$
-\Zfull(\dB \times \dB) = \Zfull(\dB) \times \Zfull(\dB) =(\psi_{x, y, y}^1)^2
-$$
-Произведение сохраняется для $\mathcal Z^{(1)}, \Zfull$.
 \item
 $$A \circ \dB = \dB \circ A = A$$
 \dB --- единица подстановки.
@@ -194,12 +205,17 @@ $$\dBB \circ \dA = \dAA$$
 \begin{frame}{Заключение}
 Результат:
 \begin{enumerate}[*]
-\item Частично разработан комбинаторный язык для h-species.
-\item Написана явная формула для цикленного индекса.
-\item Написана формула для композиции цикленных индексов.
-\item Произведены явные вычисления для нескольких содержательных примеров,
-результаты согласуются с комбинаторной интуицией и помогают ее развить.
+\item Введен гипероктаэдральный цикленный индекс, написана явная формула.
+\item Определена композиция, введен гипероктаэдральный плетизм. Написана явная
+формула.
+\item Рассмотрено множество примеров. Частично разработан комбинаторный язык.
 \end{enumerate}
+
+Таким образом получены оригинальные результаты, формулировки которых
+не были известы заранее. Планируется опубликовать главу II в виде отдельной
+статьи. Главу I можно использовать как русскоязычный конспект по теории
+комбинаторных видов.
+
 \end{frame}
 
 \end{document}
